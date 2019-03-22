@@ -109,10 +109,10 @@ class BaseField:
         :return: The ``wagtail.core.blocks.StructBlock`` to be used in the StreamField
         """
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
-            ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
-            ('default_value', blocks.CharBlock(required=False)),
+            ('label', blocks.CharBlock(classname='compact compact-300') ),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
+            ('default_value', blocks.CharBlock(required=False,classname='compact')),
+            ('help_text', blocks.CharBlock(required=False,classname='')),
         ], icon=self.icon, label=self.label)
 
 

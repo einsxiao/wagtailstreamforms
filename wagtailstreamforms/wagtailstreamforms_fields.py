@@ -68,10 +68,10 @@ class DropdownField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
-            ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
-            ('empty_label', blocks.CharBlock(required=False)),
+            ('label', blocks.CharBlock(classname='compact compact-300',)),
+            ('required', blocks.BooleanBlock(required=False,classname='compact',)),
+            ('empty_label', blocks.CharBlock(required=False,classname='compact',)),
+            ('help_text', blocks.CharBlock(required=False,classname='',)),
             ('choices', blocks.ListBlock(blocks.CharBlock(label="Option"))),
         ], icon=self.icon, label=self.label)
 
@@ -90,9 +90,9 @@ class MultiSelectField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
-            ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
+            ('help_text', blocks.CharBlock(required=False,classname='')),
             ('choices', blocks.ListBlock(blocks.CharBlock(label="Option"))),
         ], icon=self.icon, label=self.label)
 
@@ -112,9 +112,9 @@ class RadioField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
-            ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
+            ('help_text', blocks.CharBlock(required=False,classname='')),
             ('choices', blocks.ListBlock(blocks.CharBlock(label="Option")))
         ], icon=self.icon, label=self.label)
 
@@ -134,9 +134,9 @@ class CheckboxesField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
-            ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
+            ('help_text', blocks.CharBlock(required=False,classname='')),
             ('choices', blocks.ListBlock(blocks.CharBlock(label="Option"))),
         ], icon=self.icon, label=self.label)
 
@@ -149,9 +149,9 @@ class CheckboxField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
             ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
         ], icon=self.icon, label=self.label)
 
 
@@ -172,9 +172,9 @@ class SingleFileField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
             ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
         ], icon=self.icon, label=self.label)
 
 
@@ -187,7 +187,7 @@ class MultiFileField(BaseField):
 
     def get_form_block(self):
         return blocks.StructBlock([
-            ('label', blocks.CharBlock()),
+            ('label', blocks.CharBlock(classname='compact compact-300')),
+            ('required', blocks.BooleanBlock(required=False,classname='compact')),
             ('help_text', blocks.CharBlock(required=False)),
-            ('required', blocks.BooleanBlock(required=False)),
         ], icon=self.icon, label=self.label)

@@ -70,7 +70,7 @@ class Form(models.Model):
         null=True,
         blank=True,
         related_name='+',
-        help_text=_('The page to redirect to after a successful submission')
+        help_text=_('The page to redirect to after a successful submission'),
     )
     process_form_submission_hooks = HookSelectField(
         verbose_name=_('Submission hooks'),
@@ -78,15 +78,15 @@ class Form(models.Model):
     )
 
     settings_panels = [
-        FieldPanel('title', classname='full'),
-        FieldPanel('slug'),
-        FieldPanel('template_name'),
-        FieldPanel('submit_button_text'),
+        FieldPanel('title', classname='full',),
+        FieldPanel('slug',classname='compact',),
+        FieldPanel('template_name',classname='compact'),
+        FieldPanel('submit_button_text',classname='compact'),
         MultiFieldPanel([
-            FieldPanel('success_message'),
-            FieldPanel('error_message'),
+            FieldPanel('success_message',classname='compact'),
+            FieldPanel('error_message',classname='compact'),
         ], _('Messages')),
-        FieldPanel('process_form_submission_hooks', classname='choice_field'),
+        FieldPanel('process_form_submission_hooks', classname='choice_field',),
         PageChooserPanel('post_redirect_page')
     ]
 
